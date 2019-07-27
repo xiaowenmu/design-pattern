@@ -31,12 +31,12 @@ public:
 	}
 	
 	void notifyAll(){
-		std::lock_guard<std::mutex> loce(mutex_);
+		std::lock_guard<std::mutex> lock(mutex_);
 		auto itr = observers_.begin();
 		while(itr != observers_.end()){
 			std::shared_ptr<Observer> obj(itr->lock());
 			if(obj){
-				obj->update();
+				obj->update();  //fix:if exception happens,other Observer can not be updated; 
 				++itr;
 			}
 			else{
