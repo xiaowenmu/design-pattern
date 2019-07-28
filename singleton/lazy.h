@@ -26,7 +26,7 @@ private:
 	
 	
 template<typename T>
-T *SingleTon<T>::target = new SingleTon;
+T *SingleTon<T>::target = new T;
 	
 	
 	
