@@ -5,8 +5,8 @@
 
 int main(){
 	Stock stock;
-	buyStock buy(&stock);
-	sellStock sell(&stock);
+	BuyStock buy(&stock);
+	SellStock sell(&stock);
 	
 	buy.exec();
 	sell.exec();
